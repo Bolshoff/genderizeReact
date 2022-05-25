@@ -1,0 +1,10 @@
+.genderize{
+    width: 600px;
+    height: 300px;
+    border: solid 2px black;
+}
+.submit-name__form{
+    position: relative;
+    top: 30%;
+    left: 20%;
+}

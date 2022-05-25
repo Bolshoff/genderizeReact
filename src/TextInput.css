@@ -1,0 +1,7 @@
+.name-input{
+    margin: 10px;
+    width: 240px;
+    height: 40px;
+    outline: black 1px;
+    font-size: 18px;
+}
