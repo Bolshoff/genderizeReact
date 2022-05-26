@@ -1,9 +1,19 @@
 .submit-button{
     margin: 10px;
-    width: 70px;
+    width: 102%;
     height: 45px;
-    background-color: white;
-    outline: black 1px;
+    outline: none;
+    border: none;
     cursor: pointer;
     font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: cornflowerblue;
+    color: white;
+}
+.submit-button:hover{
+    background-color: #5e87ce;
+}
+.submit-button:active{
+    background-color: #3d6ab6;
 }

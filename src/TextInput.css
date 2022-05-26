@@ -1,7 +1,12 @@
 .name-input{
     margin: 10px;
-    width: 240px;
+    width: 100%;
     height: 40px;
     outline: black 1px;
     font-size: 18px;
+    border-radius: 8px;
+}
+.name-input:focus{
+   border:solid #65b0fa 3px;
+    margin-bottom: 8px;
 }
