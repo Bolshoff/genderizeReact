@@ -1,10 +1,11 @@
 import "./Main.css"
 import TextInput from './TextInput';
 import Button from './Button';
+import GenderResponse from './GenderResponse';
 
 function Main(props){
 
-  function chekGender(e){
+  function checkGender(e){
     e.preventDefault();
     console.log('gender is checked');
     e.target.reset();
@@ -12,7 +13,8 @@ function Main(props){
   }
   return(
       <div className="genderize">
-        <form className="submit-name__form" onSubmit={chekGender}>
+        <GenderResponse />
+        <form className="submit-name__form" onSubmit={checkGender}>
           <label>
             <TextInput value="" />
           </label>
