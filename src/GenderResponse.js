@@ -1,13 +1,12 @@
 import './GenderResponse.css';
 
-function GenderResponse(props){
-  const serverUrl = 'https://api.genderize.io';
-  let response;
+    function GenderResponse(props){
+
 
   return(
       <div className="gender-response">
         Gender is:
-        <span className="gender-response-out"> Some gender</span>
+        <span className="gender-response-out" >{props.textContent} </span>
       </div>
   );
 }
