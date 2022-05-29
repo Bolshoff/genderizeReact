@@ -3,7 +3,7 @@ import "./Main.css"
 import TextInput from './TextInput';
 import Button from './Button';
 import GenderResponse from './GenderResponse';
-import Warning from './Warning';
+
 
 
 class Main extends React.Component{
@@ -40,8 +40,7 @@ class Main extends React.Component{
   }
 
   validNameLength(){
-
-      return <p>To short name</p>
+      return <p>To many short name</p>
       }
 
   render() {
@@ -55,7 +54,7 @@ class Main extends React.Component{
           <form className="submit-name__form" onSubmit={this.checkGender}>
             <label>
               <TextInput   updateData={this.updateData} />
-              {(nameState < 2)?this.validNameLength():<h2></h2>}
+              {(nameState < 2) ? this.validNameLength() : <h2></h2>}
             </label>
             <Button type="submit" value="CHECK"/>
           </form>
