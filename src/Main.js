@@ -46,8 +46,8 @@ class Main extends React.Component{
 
   }
 
-  toShortNameLength(){
-      return <p>To many short name</p>
+  tooShortNameLength(){
+      return <p>Too short name</p>
       }
 
   render() {
@@ -61,7 +61,7 @@ class Main extends React.Component{
           <form className="submit-name__form" onSubmit={this.checkGender}>
             <label>
               <TextInput   updateData={this.updateData}  />
-              {(nameState.length < 2) ? this.toShortNameLength() : <h2></h2>}
+              {(nameState.length < 2) ? this.tooShortNameLength() : <h2></h2>}
 
             </label>
             <Button type="submit" value="CHECK"/>
