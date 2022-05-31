@@ -13,10 +13,12 @@ class TextInput extends React.Component{
   }
 
   render() {
+    const name = this.props.name;
     return( <input className="name-input"
                    type="text"
                    placeholder="type name"
                    onChange={this.inputChangeListener}
+                   value={name}
           />);
   }
 
