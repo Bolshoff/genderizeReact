@@ -9,7 +9,6 @@ class TextInput extends React.Component{
 
   }
   inputChangeListener(event){
-
     this.props.updateData(event.target.value);
   }
 
