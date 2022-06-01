@@ -2,7 +2,6 @@ import './GenderResponse.css';
 
     function GenderResponse(props){
 
-
   return(
       <div className="gender-response">
         Gender is:
