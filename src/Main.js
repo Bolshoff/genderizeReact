@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./Main.css"
 import TextInput from './TextInput';
 import Button from './Button';
@@ -6,29 +6,22 @@ import GenderResponse from './GenderResponse';
 
 
 
-class Main extends React.Component{
-  constructor(props) {
-    super(props);
-    this.checkGender = this.checkGender.bind(this)
-    this.state = {value: '', gender:''}
-    this.updateData = this.updateData.bind(this);
-    this.getGender = this.getGender.bind(this);
-    this.serverUrl = 'https://api.genderize.io';
+function Main(props){
+  const [inputValue, setInputValue] = useState('');
+  const [gender, setGender] = useState(null);
+  const serverUrl = 'https://api.genderize.io';
 
+   function updateData(value){
+    setInputValue(value);
   }
 
-  updateData(value){
-    this.setState({value: value});
-
-  }
-
-   getGender(){
-    const inputName = this.state.value;
-    const url = `${this.serverUrl}?name=${inputName}`
+ function  getGender(){
+    const inputName = inputValue;
+    const url = `${serverUrl}?name=${inputName}`
       if(typeof +inputName ==='number') {
         try {
           fetch(url).then((response) => response.json()).then(name => {
-            this.setState({gender: name.gender})
+            setGender( name.gender);
           })
         }catch(e)
         {
@@ -39,33 +32,25 @@ class Main extends React.Component{
 
   }
 
-  checkGender(e){
+  function checkGender(e){
     e.preventDefault();
-    this.getGender();
+    getGender();
     e.target.reset();
 
   }
 
-  render() {
-    let nameState = this.state.value;
-
     return(
         <div className="genderize">
-
-          <GenderResponse  textContent={this.state.gender}/>
-
-          <form className="submit-name__form" onSubmit={this.checkGender}>
+          <GenderResponse  textContent={gender}/>
+          <form className="submit-name__form" onSubmit={checkGender}>
             <label>
-              <TextInput   updateData={this.updateData}  />
-              <p className="warning-message">{(nameState.length < 3 && nameState.length > 0) ? "Too short name" : ""}</p>
+              <TextInput   updateData={updateData}  />
+              <p className="warning-message">{(inputValue.length < 3 && inputValue.length > 0) ? "Too short name" : ""}</p>
             </label>
             <Button type="submit" value="CHECK"/>
           </form>
         </div>
     );
-  }
-
-
 }
 
 export default Main;

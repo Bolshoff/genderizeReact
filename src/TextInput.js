@@ -30,7 +30,7 @@ function TextInput(props){
     props.updateData(event.target.value);
   }
 
-  const name = props.name;
+   const name = props.name;
     return( <input className="name-input"
                    type="text"
                    placeholder="type name"
