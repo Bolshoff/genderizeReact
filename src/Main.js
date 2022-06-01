@@ -46,10 +46,6 @@ class Main extends React.Component{
 
   }
 
-  tooShortNameLength(){
-      return <p className="warning-message">Too short name</p>
-      }
-
   render() {
     let nameState = this.state.value;
 
